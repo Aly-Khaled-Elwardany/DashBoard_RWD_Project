@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employees Page (Grid View)</title>
+    <title>Projects Page (Grid View)</title>
     <link rel="stylesheet" href="/assets/icons/Aly_icons/aly.icons.css" />
     <link rel="icon" type="image/x-icon" href="/assets/images/Logo/logo2.png" />
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.css"
     />
-    <link rel="stylesheet" href="/assets/css/aly_style.css" />
-    <link rel="stylesheet" href="/assets/css/doha-employee-style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
+    <link rel="stylesheet" href="/assets/css/aly_style.css" />
+    <link rel="stylesheet" href="/assets/css/doha_project-style.css" />
   </head>
 
   <body>
@@ -1569,27 +1569,27 @@
       <!-- Page Content-->
       <div class="container">
         <!-- .......................................................................................... -->
-        <!-- Employee part1 -->
+        <!-- Porject part1 -->
         <div class="container">
           <div class="row justify-content-between align-items-center">
             <div class="col-4 col-sm-5">
-              <h1 class="pt-4">Employee</h1>
+              <h1 class="pt-4">Projects</h1>
               <span id="dash-e"
                 ><a href="#" class="text-reset text-decoration-none fw-bold"
                   >Dashboard</a
                 >
-                / Employee</span
+                / Projects</span
               >
             </div>
             <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 pt-4 small-e">
               <div class="row justify-content-around">
                 <button class="btn rounded bg-white col-auto">
-                  <a href="./employees_grid_view_doha.html"
+                  <a href="./projects_grid_view_doha.html"
                     ><i class="fa-solid fa-grip"></i
                   ></a>
                 </button>
                 <button class="btn rounded bg-white col-auto">
-                  <a href="./employees_list_view_marwa.html"
+                  <a href="./projects_list_view_doha.html"
                     ><i class="fa-solid fa-bars"></i
                   ></a>
                 </button>
@@ -1661,7 +1661,7 @@
             </div>
           </div>
         </div>
-        <!------------------------------- Modal --------------------------->
+        <!------------ Modal ------------->
 
         <div
           class="modal fade"
@@ -2529,16 +2529,16 @@
             </div>
           </div>
         </div>
-
-        <!-- Employee part2 -->
+        <!-- Porject part2 -->
         <div class="container">
           <!-- All card -->
-          <div class="row staff-grid-row">
+          <div class="row g-2">
             <!-- card1 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
                 class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2559,30 +2559,101 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#"
-                    ><img
-                      src="./assets/images/Profile Pictures/avatar-1.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                  /></a>
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
+                  </p>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">Catherine Manseau</h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
+                </div>
+
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
+                </div>
+
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- card2 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
+                class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2603,30 +2674,101 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-2.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                  /></a>
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
+                  </p>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">Catherine Manseau</h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Front end Developer
-                  </p>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
+                </div>
+
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
+                </div>
+
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- card3 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
+                class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2647,32 +2789,101 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-3.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
+                  </p>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">Catherine Manseau</h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    UI/Ux Designer
-                  </p>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
+                </div>
+
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
+                </div>
+
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- card4 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
+                class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2693,32 +2904,101 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-4.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
+                  </p>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">Cream Inc</h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
+                </div>
+
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
+                </div>
+
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- card5 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
                 class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2739,30 +3019,101 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-5.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                  /></a>
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
+                  </p>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">Catherine Manseau</h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    UI/Ux Designer
-                  </p>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
+                </div>
+
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
+                </div>
+
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- card6 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="col-lg-4 col-sm-12 col-md-6 col-xl-3">
               <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
+                class="card align-items-center bg-white Small shadow pt-3 card1"
               >
+                <!-- dropdown -->
                 <div class="dropdown dropbtn">
                   <a data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -2783,361 +3134,92 @@
                   </ul>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-6.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none"
-                    ><h5 class="card-title text-center">
-                      Catherine Manseau
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
+                <!-- txt -->
+                <div class="ps-3 pb-3">
+                  <h5 class="card-title">Office Management</h5>
+                  <h6 class="card-text text-secondary">
+                    <span class="text-black"> 1</span> open tasks,
+                    <span class="text-black"> 9</span>tasks completed
+                  </h6>
+                  <p class="card-text text-secondary pe-3">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. When an unknown printer took a galley
+                    of type and scrambled it...
                   </p>
-                </div>
-              </div>
-            </div>
-            <!-- card7 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
+
+                  <h6 class="card-title">Deadline:</h6>
+                  <h6 class="card-text text-secondary">17-04-2019</h6>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-7.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
+                <!-- image g-1 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Project Leader :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">
-                      Mercury Software Inc
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- card8 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
+                <!-- image g-2 -->
+                <div class="ps-3 pb-3">
+                  <h6 class="card-title col-12">Team :</h6>
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-1.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-2.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-5.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <img
+                    src="./assets/images/Profile Pictures/avatar-7.jpg"
+                    class="rounded-circle col-1"
+                    alt="..."
+                  />
+
+                  <div class="text-white rounded-circle d-inline-block circle1">
+                    <p class="txt15">+15</p>
+                  </div>
                 </div>
 
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-8.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                  /></a>
+                <!--text progress -->
+                <div class="row col-12">
+                  <h6 class="col-9">Progress</h6>
+                  <h6 class="col-3 text-end" style="color: #55cb72">40%</h6>
                 </div>
 
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">
-                      Carlson Technologies Inc
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- card9 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-9.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">
-                      Global Technologies
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- card10 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-10.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">
-                      International Software
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- card11 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <a href="#"
-                    ><img
-                      src="./assets/images/Profile Pictures/avatar-11.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none"
-                    ><h5 class="card-title text-center">
-                      International Software
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- card12 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-12.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none">
-                    <h5 class="card-title text-center">
-                      International Software
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- card13 -->
-            <div class="p-1 col-md-6 col-sm-6 col-12 col-lg-4 col-xl-3">
-              <div
-                class="card align-items-center bg-white Small shadow card1 pt-3"
-              >
-                <div class="dropdown dropbtn">
-                  <a data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-pencil"></i>
-                        Edit</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-sharp fa-solid fa-trash-can"></i>
-                        Delet</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <a href="#">
-                    <img
-                      src="./assets/images/Profile Pictures/avatar-13.jpg"
-                      class="rounded-circle"
-                      alt="..."
-                      width="150px"
-                      height="150px"
-                  /></a>
-                </div>
-
-                <div class="card-body">
-                  <a href="#" class="text-reset text-decoration-none"
-                    ><h5 class="card-title text-center">
-                      International Software
-                    </h5></a
-                  >
-                  <p class="card-text text-center text-secondary lh-1 CEO">
-                    Web Developer
-                  </p>
+                <!--progress  -->
+                <div class="col-12 ps-2 pe-2 pb-3">
+                  <div class="progress progress-xs mb-0 col-12">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Info example"
+                      style="width: 40%; background-color: #55cb72"
+                      aria-valuenow="40"
+                      aria-valuemin="10%"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3150,10 +3232,6 @@
 
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="/assets/js/aly_js.js"></script>
-    <script src="/assets/js/doha_js.js"></script>
-
-    <!-- add by Doha -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="/assets/js/nada_js.js"></script>
   </body>
 </html>
