@@ -154,4 +154,8 @@ body{
       width: 190px !important;
     }
 
+    #max_sidebar{
+      display: none !important;
+    }
+
   }
