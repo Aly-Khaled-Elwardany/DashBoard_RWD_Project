@@ -1,0 +1,50 @@
+@media (max-width:580px){
+    #dash-e{
+        display: none;
+    }
+    .small-e{
+        width:70% !important;
+    }
+    .inputs{
+        margin:2.25rem 0;
+    }
+}
+
+@media (max-width:1000px){
+    .select{
+        font-size: 0.5rem;
+    }
+}
+#btnSearch {
+    background-color: #55cb72;
+    height:58px;
+  }
+
+.table {
+    font-size: 1rem;
+}
+
+.name1,
+.name2 {
+    margin-bottom: 0.3rem;
+}
+
+.name2 {
+    font-size: 0.8rem;
+}
+
+.btn {
+    background-color: #55cb72;
+}
+
+.name1:hover {
+    color: #698aea;
+}
+
+.add {
+background-color: #698aea;
+}
+
+.add:hover {
+background-color: #4b68e7;
+}

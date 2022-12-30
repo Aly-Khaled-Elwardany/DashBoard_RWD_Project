@@ -1,0 +1,26 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.table {
+    font-size: 1rem;
+}
+
+.name1 {
+    margin-bottom: 0.3rem;
+}
+
+.name2 {
+    font-size: 0.8rem;
+}
+
+.btn {
+    background-color: #55cb72;
+}
+
+.icon1 {
+    color: #55cb72;
+}
+.name1:hover {
+    color: #698aea;
+}
