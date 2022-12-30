@@ -27,7 +27,7 @@
           height: 8vh;
           background-image: linear-gradient(to right, #647dee, #7f53ac);
         "
-        class="d-flex justify-content-between align-items-center"
+        class="div_in_navBar d-flex justify-content-between align-items-center"
       >
         <!-- Left Part in nav bar -->
         <div
@@ -769,263 +769,110 @@
               <!-- End of Accordion -->
             </div>
 
-            <!-- second icon -->
-            <div class="div_in_miniSideBar mb-2 pt-1 d-flex">
-              <i class="icon_size ms-auto me-auto icon-cube"></i>
-              <!-- Accordion -->
-              <div
-                class="d-none appear border-0 ms-3"
-                style="width: 85%"
-                id="apps"
-              >
-                <div class="accordion-item bg-transparent">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button
-                      style="
-                        opacity: 0.7;
-                        font-size: 1.1rem !important;
-                        width: 95%;
-                      "
-                      class="hover position-relative accordion-button fs-5 bg-transparent position-relative"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#apps"
-                    >
-                      Apps
-                      <i
-                        class="position-absolute end-0 icon-keyboard_arrow_right"
-                      ></i>
-                    </button>
-                  </h2>
-                  <div
-                    id="apps"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="mb-2">
-                      <a
-                        href="#"
-                        class="hover d-block my-2 text-white text-decoration-none"
-                        style="opacity: 0.7; font-size: 1rem"
-                        >Chat</a
-                      >
-                      <!-- Calls -->
-                      <div
-                        class="d-none appear border-0 ms-3 text-start"
-                        id="calls"
-                      >
-                        <div class="accordion-item bg-transparent">
-                          <h2 class="accordion-header" id="headingOne">
-                            <button
-                              style="
-                                opacity: 0.7;
-                                right: 1rem;
-                                width: 100% !important;
-                              "
-                              class="hover mb-2 accordion-button bg-transparent position-relative"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#calls"
-                            >
-                              Calls<i
-                                class="position-absolute end-0 icon-keyboard_arrow_right"
-                              ></i>
-                            </button>
-                          </h2>
-                          <div
-                            id="calls"
-                            class="accordion-collapse collapse show position-relative"
-                          >
-                            <div class="mb-2">
-                              <a
-                                href="#"
-                                class="hover d-block my-2 text-white text-decoration-none"
-                                style="opacity: 0.7; font-size: 1rem"
-                                >Voice Call</a
-                              >
-                              <a
-                                href="#"
-                                class="hover d-block mb-2 text-white text-decoration-none"
-                                style="opacity: 0.7; font-size: 1rem"
-                                >Video Call</a
-                              >
-                              <a
-                                href="#"
-                                class="hover d-block mb-2 text-white text-decoration-none"
-                                style="opacity: 0.7; font-size: 1rem"
-                                >Outgoing Call</a
-                              >
-                              <a
-                                href="#"
-                                class="hover d-block mb-2 text-white text-decoration-none"
-                                style="opacity: 0.7; font-size: 1rem"
-                                >Incoming Call</a
-                              >
-                            </div>
+          <!-- second icon -->
+          <div class="div_in_miniSideBar mb-2 pt-1 d-flex">
+            <i class="icon_size ms-auto me-auto icon-cube"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="apps">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#apps">
+                    Apps
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="apps" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                    <a href="#" class="hover d-block my-2 text-white text-decoration-none" style="opacity: 0.7; font-size: 1rem">Chat</a>
+                    <!-- Calls -->
+                    <div class="d-none appear border-0 ms-3 text-start" id="calls">
+                      <div class="accordion-item bg-transparent">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button style="opacity: 0.7; right: 1rem; width: 100% !important"
+                            class="hover mb-2 accordion-button bg-transparent position-relative" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#calls">
+                            Calls<i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                          </button>
+                        </h2>
+                        <div id="calls" class="accordion-collapse collapse show position-relative">
+                          <div class="mb-2">
+                            <a href="#" class="hover d-block my-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Voice Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Video Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Outgoing Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Incoming Call</a>
                           </div>
                         </div>
                       </div>
-                      <!-- Eend of calls -->
-                      <a
-                        href="#"
-                        class="hover d-block mb-2 text-white text-decoration-none"
-                        style="opacity: 0.7; font-size: 1rem"
-                        >Calendar</a
-                      >
-                      <a
-                        href="#"
-                        class="hover d-block mb-2 text-white text-decoration-none"
-                        style="opacity: 0.7; font-size: 1rem"
-                        >Contacts</a
-                      >
-                      <a
-                        href="#"
-                        class="hover d-block mb-2 text-white text-decoration-none"
-                        style="opacity: 0.7; font-size: 1rem"
-                        >Emails</a
-                      >
-                      <a
-                        href="#"
-                        class="hover d-block mb-2 text-white text-decoration-none"
-                        style="opacity: 0.7; font-size: 1rem"
-                        >File Manager</a
-                      >
                     </div>
+                    <!-- Eend of calls -->
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Calendar</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Contacts</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Emails</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">File
+                      Manager</a>
                   </div>
                 </div>
               </div>
-              <!-- End of Accordion -->
             </div>
+            <!-- End of Accordion -->
           </div>
         </div>
+      </div>
+   
 
-        <!-- for word Employees + the second 5 icons -->
+      <!-- for word Employees + the second 5 icons -->
+      <div>
+        <!-- Employees -->
+        <p style="visibility: hidden; font-size: 1rem" id="div_show" class="fw-semibold text-start ms-2 mt-4">
+          Employees
+        </p>
+        <!-- div for second 5 icons -->
         <div>
-          <!-- Employees -->
-          <p
-            style="visibility: hidden; font-size: 1rem"
-            id="div_show"
-            class="fw-semibold text-start ms-2 mt-4"
-          >
-            Employees
-          </p>
-          <!-- div for second 5 icons -->
-          <div>
-            <!-- first icon -->
-            <div class="div_in_miniSideBar mb-3 pt-1 d-flex">
-              <i class="icon_size ms-auto me-auto icon-user-o"></i>
-              <!-- Accordion -->
-              <div
-                class="d-none appear border-0 ms-3"
-                style="width: 85%"
-                id="apps"
-              >
-                <div class="accordion-item bg-transparent">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button
-                      style="
-                        opacity: 0.7;
-                        font-size: 1.1rem !important;
-                        width: 95%;
-                      "
-                      class="hover accordion-button fs-5 bg-transparent position-relative"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#employees"
-                    >
-                      Employees
-                      <i
-                        class="position-absolute end-0 icon-keyboard_arrow_right"
-                      ></i>
-                    </button>
-                  </h2>
-                  <div
-                    id="employees"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="mb-2">
-                      <div class="mb-2">
-                        <a
-                          href="/employees_grid_view_doha.html"
-                          class="d-block my-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >All Employees</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Holidays</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Leaves (Admin)</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Leaves (Employee)</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Leave Setting</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Attendence (Admin)</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Attendance (Employee)</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Departments</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Designations</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Timesheet</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Shift & Schedule</a
-                        >
-                        <a
-                          href="#"
-                          class="d-block mb-2 hover text-white text-decoration-none"
-                          style="opacity: 0.7; font-size: 1rem"
-                          >Overtime</a
-                        >
-                      </div>
-                    </div>
+          
+         <!-- first icon -->
+          <div class="div_in_miniSideBar mb-3 pt-1 d-flex">
+            <i class="icon_size ms-auto me-auto icon-user-o"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="apps">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover accordion-button fs-5 bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#employees">
+                    Employees
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="employees" class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                          <div class="mb-2">
+                            <a href="/employees_grid_view_doha.html" class="d-block my-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">All Employees</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Holidays</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leaves (Admin)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leaves (Employee)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leave Setting</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Attendence (Admin)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Attendance (Employee)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Departments</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Designations</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Timesheet</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Shift & Schedule</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Overtime</a>
+                          </div>
+                  
+
                   </div>
                 </div>
               </div>
-              <!-- End of Accordion -->
             </div>
+            <!-- End of Accordion -->
+          </div>
+          
+
 
             <!-- second icon -->
             <div
@@ -1080,7 +927,7 @@
                   >
                     <div class="mb-2">
                       <a
-                        href="/projects_grid_view_nada.html"
+                        href="/projects_grid_view_doha.html"
                         class="d-block mt-2 hover text-white text-decoration-none"
                         style="opacity: 0.7; font-size: 1rem"
                         >Projects</a
