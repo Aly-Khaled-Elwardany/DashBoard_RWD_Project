@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects Page (Grid View) </title>
+  <link rel="stylesheet" href="/assets/icons/Aly_icons/aly.icons.css" />
+  <link rel="icon" type="image/x-icon" href="/assets/images/Logo/logo2.png" />
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/assets/css/aly_style.css" />
+  <link rel="stylesheet" href="/assets/css/nada_style.css">
+</head>
+
+<body>
+  <!-- ....................... nav bar ............................ -->
+  <nav style="position: fixed; top: 0; width: 100vw; z-index: 100">
+    <div style="
+          height: 8vh;
+          background-image: linear-gradient(to right, #647dee, #7f53ac);
+        " class="d-flex justify-content-between align-items-center">
+      <!-- Left Part in nav bar -->
+      <div style="width: 42%" class="left_div_in_sideBar d-flex justify-content-between align-items-center ms-3">
+        <!-- Logo -->
+        <div class=" logo_img_in_navBar text-white">
+          <img style="height: 2.5rem" src="/assets/images/Logo/logo.png" alt="Nav_Logo" />
+        </div>
+
+        <div style="width: 80%" class=" d-flex align-items-center justify-content-start">
+          <!-- burger button -->
+          <button onclick="Div_Toggle()" class=" border bg-transparent border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#max_sidebar">
+            <i class="me-4 text-white fs-3 icon-menu"></i>
+          </button>
+
+          <!-- Title -->
+          <h5 class=" d-none text-white d-xl-block">Dreamguy's Technologies</h5>
+        </div>
+      </div>
+
+      <!-- Right Part in nav bar -->
+      <div style="width: 58%; height: 8vh" class=" right_div_in_sideBar text-white d-flex justify-content-end align-items-center">
+        <!-- Search form -->
+        <div class=" d-flex justify-content-between align-items-center mb-3 position-relative">
+          <input style="width: 18vw" type="text" class="d-none d-lg-block form-control bg-transparent rounded-5 mt-3" id="search"
+            placeholder="Search here" />
+          <div style="right: 1rem" class=" position-absolute">
+            <i style="top: 0.5rem" class="d-none d-md-block opacity-75 position-relative text-white icon-search"></i>
+          </div>
+        </div>
+
+        <!-- Language dropdown list -->
+        <div style="height: 8vh; padding-top: 1.2rem" class=" highlighted_div px-3 dropdown d-none d-md-block">
+          <div data-bs-toggle="dropdown" class=" d-flex justify-content-between align-items-center">
+            <img class="me-2" src="/assets/images/Flags/us.png" style="width: 1.5rem" alt="US_Flag" />
+            <a class="dropdown-item d-none d-lg-block" href="#">English</a>
+            <i class="d-none d-lg-block icon-keyboard_arrow_down"></i>
+          </div>
+
+          <ul class="ul_move_position_languages dropdown-menu">
+            <!-- English Language -->
+            <li>
+              <a class="dropdown-item" href="#"><img class="me-3" src="/assets/images/Flags/us.png" style="width: 1.5rem"
+                  alt="US_Flag" />English</a>
+            </li>
+            <!-- Spanish Language -->
+            <li>
+              <a class="dropdown-item" href="#"><img class="me-3" src="/assets/images/Flags/es.png" style="width: 1.5rem"
+                  alt="US_Flag" />Spanish</a>
+            </li>
+            <!-- French Language -->
+            <li>
+              <a class="dropdown-item" href="#"><img class="me-3" src="/assets/images/Flags/fr.png" style="width: 1.5rem"
+                  alt="US_Flag" />France</a>
+            </li>
+            <!-- German Language -->
+            <li>
+              <a class="dropdown-item" href="#"><img class="me-3" src="/assets/images/Flags/de.png" style="width: 1.5rem"
+                  alt="US_Flag" />German</a>
+            </li>
+          </ul>
+        </div>
+
+        <!--  dropdown list of the bell  -->
+        <div style="height: 8vh; padding-top: 1.5rem" class="highlighted_div ps-3 dropdown d-none d-md-block ">
+          <div data-bs-toggle="dropdown" class="d-flex justify-content-between align-items-center">
+            <i class="fs-5 icon-bell-o"></i>
+            <span style="bottom: 0.8rem; right: 0.8rem; font-size: 0.7rem"
+              class="position-relative badge bg-primary rounded-circle">6</span>
+          </div>
+
+          <div class="border ul_move_position_message_bell dropdown-menu border rounded-0">
+            <!-- Header of Drop Down list  -->
+            <div style="width: 25rem; height: 3vh" id="drop_down_header"
+              class="border-bottom d-flex justify-content-between align-items-center mt-2">
+              <p class="fw-semibold ms-3">Notifications</p>
+              <a href="#" style="font-size: 0.9rem" class="text-decoration-none text-danger me-3 mb-2 fw-semibold">CLEAR
+                ALL</a>
+            </div>
+
+            <!-- Body of Drop Down list  -->
+            <div style="overflow-y: scroll; height: 50vh" id="drop_down_body">
+              <ul class="list-unstyled">
+                <!-- Person 1 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-1.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 2 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-10.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 3 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-14.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 4 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-17.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 5 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-2.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 6 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-3.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 7 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-4.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 8 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-5.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Footer of Drop Down list  -->
+            <div style="height: 2.5vh" id="drop_down_footer" class="text-center">
+              <a href="#" class="fw-semibold ms-3 text-black text-decoration-none">View all Notifications</a>
+            </div>
+          </div>
+        </div>
+
+        <!--  dropdown list of the Message  -->
+        <div style="height: 8vh; padding-top: 1.5rem" class="highlighted_div ps-3 dropdown d-none d-md-block">
+          <div data-bs-toggle="dropdown" class="d-flex justify-content-between align-items-center">
+            <i class="fs-5 icon-comment-o"></i>
+            <span style="bottom: 0.8rem; right: 0.8rem; font-size: 0.7rem"
+              class="position-relative badge bg-primary rounded-circle">8</span>
+          </div>
+
+          <div class="ul_move_position_message_bell dropdown-menu border rounded-0">
+            <!-- Header of Drop Down list  -->
+            <div style="width: 25rem; height: 3vh" id="drop_down_header"
+              class="border-bottom d-flex justify-content-between align-items-center mt-2">
+              <p class="fw-semibold ms-3">Messeges</p>
+              <a href="#" style="font-size: 0.9rem" class="text-decoration-none text-danger me-3 mb-2 fw-semibold">CLEAR
+                ALL</a>
+            </div>
+
+            <!-- Body of Drop Down list  -->
+            <div style="overflow-y: scroll; height: 50vh" id="drop_down_body">
+              <ul class="list-unstyled">
+                <!-- Person 1 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-1.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 2 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-10.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 3 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-14.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 4 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-17.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 5 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-2.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 6 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-3.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 7 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-4.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <!-- Person 8 -->
+                <li style="height: 10vh" class="mt-3 ps-3 border-bottom">
+                  <a href="#" class="d-flex text-dark text-decoration-none">
+                    <img style="height: 4rem" src="/assets/images/Profile Pictures/avatar-5.jpg" class="rounded-circle"
+                      alt="Person_Photo" />
+                    <div class="w-75 ps-3">
+                      <p>
+                        John Doe
+                        <span class="opacity-50">adden new task </span>Patient
+                        appointment booking
+                      </p>
+                      <p style="position: relative; top: -1rem" class="fw-semibold opacity-50">
+                        4 mins ago
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Footer of Drop Down list  -->
+            <div style="height: 2.5vh" id="drop_down_footer" class="text-center ">
+              <a href="#" class="fw-semibold ms-3 text-black text-decoration-none">View all Messeges</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- dropdown list + image  -->
+        <div style="height: 8vh ;" class="highlighted_div  dropdown ">
+          <a style="height:100% !important; padding:2rem;display: flex !important;" class="d-none d-md-block text-white d-flex align-items-center text-decoration-none fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+            <img style="height: 4vh;" src="/assets/images/Profile Pictures/avatar-21.jpg" class="d-none d-md-block img_in_navBar rounded-circle"
+              alt="User_Photo" />
+            <span  class=" ms-2 d-none d-lg-block">
+              Admin 
+            <i style="top: 0.2rem" class="fs-5 position-relative icon-keyboard_arrow_down"></i>
+            </span>
+            <i class="d-block d-md-none icon-dots-horizontal-triple fw-bold fs-3"></i>
+          </a>
+          
+
+          <ul class="ul_move_position_admin dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Profile</a></li>
+            <li><a class="dropdown-item" href="#">Setting</a></li>
+            <li><a class="dropdown-item" href="#">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- ....................... Main ...................... -->
+  <main style=" top: 7vh; " class="d-flex position-relative side_bar">
+    
+    
+    
+    <!-- Mini Side Bar -->
+    <div  id="mini_sidebar" style="  width:5%; background-color: #34444c;" class="d-block fs-4 mini_sidebar text-white">
+      
+    <!-- for word main + the first 2 icons -->
+      <div>
+        <!-- Main -->
+        <p id="div_show" style="font-size: 1rem ; visibility: hidden; top: 0.75rem;" class="position-relative p-1 fw-semibold text-start ms-2 mt-1">
+          Main
+        </p>
+        <!-- div for first and second icons -->
+        <div>
+          <!-- first icon -->
+          <div class="div_in_miniSideBar mb-2 pt-2 d-flex" style="background-color: #2a363d">
+            <i class="icon_size ms-auto me-auto pb-2 icon-meter"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="dashboard">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover position-relative accordion-button bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#dashboard">
+                    Dashboard
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="dashboard" class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                    <a  href="/index.html" class="hover mt-3 mb-2 d-block text-white text-decoration-none" style="opacity: 0.7 ;font-size: 1rem">Admin Dashboard</a>
+                    <a  href="#" class="hover text-white text-decoration-none" style="opacity: 0.7;font-size: 1rem">Employee Dashboard</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Accordion -->
+          </div>
+
+          <!-- second icon -->
+          <div class="div_in_miniSideBar mb-2 pt-1 d-flex">
+            <i class="icon_size ms-auto me-auto icon-cube"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="apps">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#apps">
+                    Apps
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="apps" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                    <a href="#" class="hover d-block my-2 text-white text-decoration-none" style="opacity: 0.7; font-size: 1rem">Chat</a>
+                    <!-- Calls -->
+                    <div class="d-none appear border-0 ms-3 text-start" id="calls">
+                      <div class="accordion-item bg-transparent">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button style="opacity: 0.7; right: 1rem; width: 100% !important"
+                            class="hover mb-2 accordion-button bg-transparent position-relative" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#calls">
+                            Calls<i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                          </button>
+                        </h2>
+                        <div id="calls" class="accordion-collapse collapse show position-relative">
+                          <div class="mb-2">
+                            <a href="#" class="hover d-block my-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Voice Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Video Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Outgoing Call</a>
+                            <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Incoming Call</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Eend of calls -->
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Calendar</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Contacts</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">Emails</a>
+                    <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity: 0.7; font-size: 1rem">File
+                      Manager</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Accordion -->
+          </div>
+        </div>
+      </div>
+   
+
+      <!-- for word Employees + the second 5 icons -->
+      <div>
+        <!-- Employees -->
+        <p style="visibility: hidden; font-size: 1rem" id="div_show" class="fw-semibold text-start ms-2 mt-4">
+          Employees
+        </p>
+        <!-- div for second 5 icons -->
+        <div>
+          
+         <!-- first icon -->
+          <div class="div_in_miniSideBar mb-3 pt-1 d-flex">
+            <i class="icon_size ms-auto me-auto icon-user-o"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="apps">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover accordion-button fs-5 bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#employees">
+                    Employees
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="employees" class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                          <div class="mb-2">
+                            <a href="/employees_grid_view_doha.html" class="d-block my-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">All Employees</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Holidays</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leaves (Admin)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leaves (Employee)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Leave Setting</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Attendence (Admin)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Attendance (Employee)</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Departments</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Designations</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Timesheet</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Shift & Schedule</a>
+                            <a href="#" class="d-block mb-2 hover text-white text-decoration-none"style="opacity: 0.7; font-size:1rem;">Overtime</a>
+                          </div>
+                  
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Accordion -->
+          </div>
+          
+
+
+          <!-- second icon -->
+          <div id="div_without_accordion" class="div_without_accordion div_in_miniSideBar mb-3 pt-1 d-flex align-items-center ">
+            <i style="padding-left: 0.1rem;"class="icon_size fs-5 ms-auto me-auto pb-2 icon-group"></i>
+            <a href="/clients_grid_view_doha.html" style="opacity: 0.7 ; font-size: 1.1rem; right: 0.5rem;" class=" hover position-relative  d-none appear text-decoration-none text-white">Clients</a>
+          </div>
+
+      
+          <!-- Third icon -->
+          <div class="div_in_miniSideBar mb-3 pt-1 d-flex">
+            <i class=" icon_size ms-auto me-auto icon-rocket"></i>
+            <!-- Accordion -->
+            <div class="d-none appear border-0 ms-3" style="width: 85%" id="apps">
+              <div class="accordion-item bg-transparent">
+                <h2 class="accordion-header" id="headingOne">
+                  <button style="opacity: 0.7; font-size: 1.1rem !important; width: 95%"
+                    class="hover accordion-button fs-5 bg-transparent position-relative" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#projects">
+                    Projects
+                    <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                  </button>
+                </h2>
+                <div id="projects" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="mb-2">
+                    
+                    <a href="/projects_grid_view_nada.html" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Projects</a>
+                    <a href="#" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Tasks</a>
+                    <a href="#" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Task Board</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Accordion -->
+          </div>
+
+
+
+      
+          <!-- fourth icon -->
+          <div id="div_without_accordion" class="div_without_accordion div_in_miniSideBar mb-3 pt-1 d-flex align-items-center ">
+            <i style="padding-left: 0.1rem;"class="icon_size ms-auto me-auto pb-2 icon-user-secret"></i>
+            <a href="#" style="opacity: 0.7; font-size: 1.1rem" class=" hover d-none appear text-decoration-none text-white">Leads</a>
+          </div>
+          
+          <!-- fifth icon -->
+          <div id="div_without_accordion" class="div_without_accordion div_in_miniSideBar mb-3 pt-1 d-flex align-items-center ">
+            <i class="icon_size fs-5 ms-auto me-auto pb-2 icon-ticket"></i>
+            <a href="#"style="opacity: 0.7; font-size: 1.1rem"  class=" hover d-none appear text-decoration-none text-white">Tickets</a>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- Collapse -->
+    <div style="height: 100%;" class=" collapse " id="max_sidebar">
+      <div
+        style=" background-color: #34444c !important; height:100%; width: 20vw; overflow-x: none;"
+        class=" text-white side_bar fs-4">
+
+        <!-- for word main + the first 2 icons -->
+        <div>
+          <!-- Main -->
+          <p style="font-size: 1rem ;top: 0.75rem;" class="position-relative p-1 fw-semibold text-start ms-2 mt-1">
+            Main
+          </p>
+          <!-- div for first and second icons -->
+          <div >
+            <!-- first icon -->
+            <div class="ps-2 mb-2 pt-2 d-flex" style="background-color:#2a363d">
+              <i  class=" icon_size pb-2 icon-meter"></i>
+              <!-- Accordion -->
+              <div class=" ms-3" style="width: 85%" id="dashboard">
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button style="font-size: 1.1rem !important; width: 95%; opacity:0.7;"
+                      class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#dashboard2">
+                      Dashboard
+                      <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                    </button>
+                  </h2>
+                  <div id="dashboard2" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="mb-2">
+                      <a href="/index.html" class="hover mt-3 mb-2 d-block text-white text-decoration-none" style=" opacity:0.7; font-size: 1rem">Admin Dashboard</a>
+                      <a href="#" class="hover text-white text-decoration-none" style="opacity:0.7;font-size: 1rem">Employee Dashboard</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Accordion -->
+            </div>
+
+            <!-- second icon -->
+            <div class="div_in_miniSideBar mb-2 pt-1 ps-2 d-flex">
+              <i class="icon_size icon-cube"></i>
+              <!-- Accordion -->
+              <div class="ms-3" style="width: 85%" id="apps">
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button style="opacity:0.7; font-size: 1.1rem !important; width: 95%"
+                      class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#apps2">
+                      Apps
+                      <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                    </button>
+                  </h2>
+                  <div id="apps2" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="mb-2">
+                      <a href="#" class="hover d-block my-2 text-white text-decoration-none" style="opacity:0.7; font-size: 1rem">Chat</a>
+                      <!-- Calls -->
+                      <div class=" ms-3 text-start" id="calls">
+                        <div class="accordion-item bg-transparent">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button style="opacity:0.7; right: 1rem; width: 100% !important"
+                              class="hover mb-2 accordion-button bg-transparent position-relative" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#calls2">
+                              Calls<i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                            </button>
+                          </h2>
+                          <div id="calls2" class="accordion-collapse collapse show position-relative">
+                            <div class="mb-2">
+                              <a href="#" class="hover d-block my-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Voice Call</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Video Call</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Outgoing Call</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Incoming Call</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Eend of calls -->
+                      <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Calendar</a>
+                      <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Contacts</a>
+                      <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">Emails</a>
+                      <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size: 1rem">File
+                        Manager</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Accordion -->
+            </div>
+          </div>
+        </div>
+    
+        <!-- for word Employees + the second 5 icons  -->
+        <!-- Employees -->
+        <p style=" font-size: 1rem" class="fw-semibold text-start ms-2 mt-4">
+          Employees
+        </p>
+        <div  class="ps-1">
+          
+        <!-- div for second 5 icons -->
+          <div>
+            
+          <!-- first icon -->
+            <div class="ps-2 mb-3 pt-1 d-flex">
+              <i class="icon_size icon-user-o"></i>
+              <!-- Accordion -->
+              <div class=" ms-3" style="width: 85%" id="employee">
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button style=" opacity:0.7; font-size: 1.1rem !important; width: 95%"
+                      class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#employee2">
+                      Employees
+                      <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                    </button>
+                  </h2>
+                  <div id="employee2" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample">
+                    <div class="mb-2">
+                            <div class="mb-2">
+                              <a href="/employees_grid_view_doha.html" class="hover d-block my-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">All Employees</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Holidays</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Leaves (Admin)</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Leaves (Employee)</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Leave Setting</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Attendence (Admin)</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Attendance (Employee)</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Departments</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Designations</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Timesheet</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Shift & Schedule</a>
+                              <a href="#" class="hover d-block mb-2 text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Overtime</a>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Accordion -->
+            </div>
+            
+          <!-- second icon -->
+            <div id="div_without_accordion" class="ps-2 mb-3 pt-1 d-flex align-items-center ">
+              <i style="padding-left: 0.1rem;"class="icon_size fs-5 pb-2 icon-group"></i>
+              <a href="/clients_grid_view_doha.html" style="opacity:0.7; font-size: 1.1rem; left: 0.8rem;" class=" hover position-relative  text-decoration-none text-white">Clients</a>
+            </div>
+
+          <!-- Third icon -->
+            <div class="ps-2 div_in_miniSideBar mb-3 pt-1 d-flex">
+              <i class=" icon_size ms-auto me-auto icon-rocket"></i>
+              <!-- Accordion -->
+              <div class=" ms-3" style="width: 85%" id="projects">
+                <div class="accordion-item bg-transparent">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button style="opacity:0.7; font-size: 1.1rem !important; width: 95%"
+                      class="hover position-relative accordion-button fs-5 bg-transparent position-relative" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#projects2">
+                      Projects
+                      <i class="position-absolute end-0 icon-keyboard_arrow_right"></i>
+                    </button>
+                  </h2>
+                  <div id="projects2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="mb-2">
+                      
+                      <a href="/projects_grid_view_nada.html" class="hover d-block mt-2 bright_when_hover_on_it text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Projects</a>
+                      <a href="#" class="hover d-block mt-2 bright_when_hover_on_it text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Tasks</a>
+                      <a href="#" class="hover d-block mt-2 bright_when_hover_on_it text-white text-decoration-none"style="opacity:0.7; font-size:1rem;">Task Board</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Accordion -->
+            </div>
+
+          <!-- fourth icon -->
+            <div id="div_without_accordion" class="ps-2 mb-3 pt-1 d-flex align-items-center ">
+              <i style="padding-left: 0.1rem;"class=" icon_size fs-5 pb-2 icon-user-secret"></i>
+              <a href="#" style="opacity:0.7; font-size: 1.1rem; left: 1.3rem;" class=" position-relative hover text-decoration-none text-white">Leads</a>
+            </div>
+            
+          <!-- fifth icon -->
+            <div id="div_without_accordion" class="ps-2 mb-3 pt-1 d-flex align-items-center ">
+              <i style="padding-left: 0.1rem;"class=" icon_size fs-5 pb-2 icon-ticket"></i>
+              <a href="#" style="opacity:0.7; font-size: 1.1rem; left: 1rem;" class="hover position-relative  text-decoration-none text-white">Tickets</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Page Content-->
+    <div>
+      <!-- .......................................................................................... -->
+        <h1 id="div_content" class="text-center" style="width: 100%">
+      
+            Thanks <span class="text-danger">Nada</span> for your effort Please put your code here
+        </h1>
+        <h4 class="text-primary text-center">Code for Projects Page (Grid View) </h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, laboriosam reprehenderit. Provident tempore dolores temporibus vero, ducimus esse accusantium earum suscipit possimus at rem repellat dicta natus, placeat facere officia, excepturi consequatur maiores ad? Aut neque cumque unde? Nostrum consequuntur ut temporibus libero deleniti quae fuga enim, iusto aliquam esse, hic aspernatur aliquid magni eos! Expedita voluptate placeat vel accusamus at. Ut perspiciatis commodi unde dolorum inventore ea, nam repudiandae doloremque quasi maiores facere. Facilis quia cum numquam id blanditiis modi, aliquam magnam similique ab provident explicabo, fugit, obcaecati illo. Perferendis recusandae asperiores blanditiis corrupti expedita quas eius deleniti magnam rerum accusantium! Eaque ea expedita unde soluta sit commodi nostrum ipsam sint magnam reprehenderit. Error, quo quis nulla voluptas pariatur praesentium perspiciatis dolore delectus voluptatibus reprehenderit nemo quos tempore ipsum voluptates est ea neque eius harum aperiam, dolorum excepturi expedita consequatur qui! Reprehenderit doloremque vitae inventore quis expedita quos! Voluptatibus iste dolorum impedit sunt nesciunt dolorem, nemo, doloremque optio esse quibusdam voluptatem repellendus ratione, odit dolore. Vel laboriosam assumenda et fuga dicta dignissimos nihil blanditiis voluptas ducimus tempora, repellendus temporibus tenetur possimus ad vitae excepturi, quisquam facere placeat odio cum eos. Saepe aperiam molestias expedita iste itaque id sunt ex ratione veritatis asperiores, perferendis iusto, aut unde esse ducimus eius ipsa. Totam dolorem adipisci ducimus voluptatem quos labore commodi, ab fugiat, illo esse autem ipsam, unde magnam dolores eius ea deserunt repellendus dignissimos mollitia repudiandae iure excepturi. Quam doloribus, consectetur voluptate porro consequuntur doloremque repellat ullam repudiandae iusto cupiditate rem nobis molestias natus, eveniet rerum dolore cumque commodi distinctio minima nulla veritatis eaque perferendis? Illo aliquid quis voluptatum commodi facilis facere sit nesciunt deleniti sequi enim pariatur ipsa veniam ullam aut dignissimos, recusandae, consectetur in eaque. Similique voluptatem unde neque libero eveniet voluptatum inventore culpa porro accusantium esse. Quaerat quis ipsam voluptatibus quo accusantium neque praesentium tenetur ipsa. Velit voluptas repudiandae debitis culpa dolores harum, deserunt dolorem dolor voluptatibus. Voluptates sapiente repellat fugit dolorem vero cum deserunt blanditiis ad quaerat officiis molestias asperiores quae earum ea error, repellendus, similique dignissimos dicta rerum veniam cupiditate maiores. Debitis consectetur nostrum ducimus fuga totam facilis velit autem quidem ex vitae, incidunt maxime, hic dolores maiores doloremque odio. Eius culpa laboriosam, sapiente quos dolore, molestiae cumque necessitatibus deleniti velit cum debitis saepe sint temporibus quas delectus accusantium! Commodi aperiam excepturi tenetur obcaecati rerum repellat, assumenda voluptate illo quisquam rem saepe quasi, voluptas sapiente dolorem repudiandae quod cupiditate ab, reprehenderit hic officiis accusamus. Doloribus eius laboriosam, ab reiciendis omnis assumenda ipsum, a suscipit hic explicabo sunt sapiente earum dolorem, excepturi iusto soluta? Corrupti saepe cum, voluptate excepturi nostrum inventore eveniet aut ad. In dignissimos voluptas itaque optio, aut atque rerum distinctio error odio dolorem incidunt voluptatem placeat ipsam mollitia quisquam tenetur accusantium aliquid blanditiis, laborum natus deleniti? Consequatur maiores odio recusandae iste repudiandae suscipit similique asperiores quisquam mollitia ullam consectetur debitis possimus, animi fuga quasi, doloribus tempore minima. Distinctio modi natus deserunt placeat aliquam sit aperiam et asperiores rem illum, autem rerum? Ullam aspernatur laudantium recusandae fuga autem saepe numquam sed molestias vel ipsa similique consequatur officiis exercitationem beatae, officia aperiam maxime at quia magnam vitae quod quos! Libero at doloribus, deserunt ipsam saepe suscipit quia, totam velit animi aliquam itaque quod accusantium aliquid dolorum ullam quaerat mollitia obcaecati laborum labore consequatur eligendi iure hic maxime? Nam corporis molestiae, debitis in id sunt eligendi atque dolores possimus cupiditate, itaque doloribus velit nemo sit animi, exercitationem pariatur quibusdam. Quasi, ducimus? Minus error beatae ullam? Nihil eligendi dolorem, labore eaque fuga dolor qui enim quae quam velit officiis, amet ullam aliquam laborum! Architecto unde rem libero laboriosam expedita officia animi, repudiandae fugiat doloribus corporis quis minima adipisci dolore natus, non, earum sequi sunt ab quasi eos corrupti suscipit? A aperiam eaque itaque dolores saepe sed illo iste alias culpa voluptate enim nihil aliquid voluptates quaerat mollitia similique fugiat iusto, delectus quis sapiente distinctio tempore nemo! Omnis, beatae? Aliquid, tenetur dolore minima beatae debitis inventore omnis ipsa hic consequatur, repellat totam eligendi, accusantium obcaecati at? Possimus nihil accusantium tempora adipisci quos deleniti? Tenetur exercitationem voluptate autem? Quos expedita soluta quae dolores, doloremque aspernatur quidem obcaecati reprehenderit laboriosam. Velit totam soluta nesciunt animi nihil amet explicabo natus voluptates excepturi!</p>
+      <!-- ........................................................................................... -->
+    </div>
+    
+  </main>
+
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="/assets/js/aly_js.js"></script>
+  <script src="/assets/js/nada_js.js"></script>
+</body>
+
+
+
+</html>

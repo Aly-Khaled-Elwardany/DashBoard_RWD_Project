@@ -1,0 +1,157 @@
+/* To remove blue outline around input elements */
+/* input:focus{
+    outline: none !important ; 
+} */
+
+/* ................................ General ............................ */
+body{
+  overflow-x: none;
+}
+
+/* ...................................................................... */
+
+
+
+#search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    font-weight: semibold;
+    opacity: 0.7; /*For Firefox only */
+  }
+
+.ul_move_position_languages {
+    position: relative;
+    top: 1.2rem !important;
+}
+
+.ul_move_position_admin{
+  position: relative;
+  bottom: 1rem;
+}
+
+.ul_move_position_message_bell{
+    position: relative;
+    top: 1.4rem !important;
+    
+}
+
+.div_toggle{
+  display: none;
+}
+.change_width_for_div_content{
+  width: 83vw !important;
+}
+
+#blocked_eye_btn{
+  display: none;
+}
+
+.display_block{
+  display: none !important;
+}
+
+
+/* .............. Hover ................. */
+
+  .highlighted_div:hover{
+    background-color: rgba(79, 50, 82, 0.345);
+  }
+  
+  .mini_sidebar:hover .div_in_miniSideBar{
+    padding-left: 0.6rem;
+
+
+
+  }
+  
+  .mini_sidebar:hover {
+    width: 20% !important;
+    height: 100% !important;
+    position:fixed;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .mini_sidebar:hover #div_show {
+    visibility: visible !important;
+    transition: all 0.1s ;
+  }
+
+  .mini_sidebar:hover .appear{
+  display: block !important;
+  }
+
+  .mini_sidebar:hover + #div_content{
+   width: 100% !important;
+   background-color: #a5a5a2;
+  }
+ 
+    .mini_sidebar:hover  #div_without_accordion i{
+      margin-left: 0rem !important;
+  }
+
+  .mini_sidebar:hover  #div_without_accordion a{
+        margin-right: 12rem;
+        margin-left: 1.3rem;
+  }
+
+  .mini_sidebar:hover   .icon_size{
+          font-size: 1.3rem;
+  }
+
+
+  .hover:hover {
+  
+    opacity: 1 !important;
+    transition: all 0.1s;
+  }
+
+
+ 
+  
+
+
+
+  /* .................. Media Query ...................... */
+  @media (max-width: 1200px )
+  {
+    .left_div_in_sideBar{
+      width: 55% !important;
+    }
+
+    .right_div_in_sideBar{
+      width: 45% !important;
+    }
+    .icon-keyboard_arrow_down{
+      display: none;
+    }
+
+}
+
+  
+  @media (max-width: 992px )
+  {
+    .img_in_navBar{
+      position: relative;
+      right: 0.5rem;
+    }
+
+    .left_div_in_sideBar{
+      position: relative;
+    }
+    .logo_img_in_navBar{
+      position: absolute;
+      right: 0;
+    }
+
+  }
+
+
+  @media (max-width: 1000px )
+  {
+    .mini_sidebar{
+      width: 50px !important;
+    }
+    .mini_sidebar:hover{
+      width: 190px !important;
+    }
+
+  }
