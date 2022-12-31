@@ -110,7 +110,7 @@ body{
 
 
 
-  /* .................. Media Query ...................... */
+  /* .................. Media Query - Width ...................... */
   @media (max-width: 1200px )
   {
     .left_div_in_sideBar{
@@ -159,3 +159,37 @@ body{
     }
 
   }
+
+  /* .................. Media Query - Height ...................... */
+
+
+  @media (max-height: 700px )
+  {
+    .div_in_navBar{
+      padding: 2.5rem 0rem !important;
+      
+      
+     
+    }
+    
+    .side_bar{
+      top: 11.5vh !important;
+      
+    }
+    .right_div_in_sideBar{
+      height: 11.5vh !important;
+    }
+
+    .highlighted_div{
+      margin-bottom: 0.5rem;
+    }
+    .img_in_navBar{
+      width: 2rem;
+      height: 2rem !important;
+    }
+  }
+
+
+  /* .div_in_navBar{
+    
+  } */
