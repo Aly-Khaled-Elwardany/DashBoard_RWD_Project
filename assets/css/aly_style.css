@@ -7,6 +7,10 @@ body{
 
 /* ...................................................................... */
 
+#search:focus{
+  border-color: white;
+  box-shadow: 5px 5px 5px transparent;
+}
 
 
 #search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
