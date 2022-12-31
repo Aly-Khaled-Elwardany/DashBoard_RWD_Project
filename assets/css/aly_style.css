@@ -68,6 +68,7 @@ body{
     height: 100% !important;
     position:fixed;
     transition: all 0.5s ease-in-out;
+    z-index: 90;
   }
   
   .mini_sidebar:hover #div_show {
@@ -167,8 +168,6 @@ body{
   {
     .div_in_navBar{
       padding: 2.5rem 0rem !important;
-      
-      
      
     }
     
@@ -189,7 +188,3 @@ body{
     }
   }
 
-
-  /* .div_in_navBar{
-    
-  } */
