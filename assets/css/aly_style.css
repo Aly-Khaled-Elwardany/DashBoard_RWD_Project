@@ -2,7 +2,7 @@
 
 /* ................................ General ............................ */
 body{
-  overflow-x: none;
+  overflow-x: none !important;
 }
 
 /* ...................................................................... */
@@ -122,9 +122,7 @@ body{
     .right_div_in_sideBar{
       width: 45% !important;
     }
-    .icon-keyboard_arrow_down{
-      display: none;
-    }
+   
 
 }
 
@@ -198,6 +196,15 @@ body{
     
 
   }
+/* .... */
+  @media (max-width: 1400px )
+  {
+    .icon-keyboard_arrow_down{
+      display: none !important;
+    }
+
+  }
+
 
 
   /* .................. Media Query - Height ...................... */
@@ -226,6 +233,9 @@ body{
 
     .highlighted_div{
       margin-bottom: 0.5rem;
+      border-radius:0.5rem ;
+      padding: 0rem 1rem;
+      margin-left: 1rem;
     }
     .img_in_navBar{
       width: 2rem;
