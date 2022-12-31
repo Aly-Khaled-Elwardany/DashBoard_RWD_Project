@@ -23,7 +23,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
   <style>
-    body {
+  @media (max-width:580px){
+    #dash-e{
+        display: none;
+    }
+    .small-e{
+        width:70% !important;
+    }
+    .inputs{
+        margin:2.25rem 0;
+    }
+}
+
+@media (max-width:1000px){
+    .select{
+        font-size: 0.5rem;
+    }
+}
+
+body {
     background-color: #f7f7f7;
 }
 
@@ -40,10 +58,6 @@
     font-size: 0.8rem;
 }
 
-.btn {
-    background-color: #55cb72;
-}
-
 .name1:hover {
     color: #698aea;
 }
@@ -58,14 +72,19 @@ height: 1.5rem;
 text-align: center;
 padding-top: 29%;
 }
-#btnAdd{
+#btnAdd, #btnSubmit{
     background-color: #698aea;
+}
+#btnSubmit:hover {
+  background-color: #4b68e7;
 }
 #btnSearch {
     background-color: #55cb72;
     height:58px;
   }
-
+  .icon1 {
+    color: #55cb72;
+}
   </style>
 </head>
 
@@ -898,9 +917,9 @@ padding-top: 29%;
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-4 col-sm-5">
-            <h1 class="pt-4">Employee</h1>
+            <h1 class="pt-4">Projects</h1>
             <span id="dash-e"><a href="#" class="text-reset text-decoration-none fw-bold">Dashboard</a> /
-              Employee</span>
+              Projects</span>
           </div>
           <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 pt-4 small-e">
             <div class="row justify-content-around">
@@ -912,24 +931,24 @@ padding-top: 29%;
               </button>
               <button class="btn rounded-pill text-white fs-5 col-auto add" data-bs-toggle="modal"
                 data-bs-target="#addEmpolyee" id="btnAdd">
-                <i class="fa-solid fa-plus"></i> Add Employee
+                <i class="fa-solid fa-plus"></i> Create Project
               </button>
             </div>
           </div>
           <div class="row mt-5">
             <div class="col-lg-3 col-md-3 col-sm-6 form-floating mb-5">
               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-              <label for="floatingInput" class="ps-4 text-">Employee ID</label>
+              <label for="floatingInput" class="ps-4 text-">Project Name</label>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 form-floating">
               <input type="password" class="form-control" id="floating" placeholder="Password" />
               <label for="floating" class="ps-4">Employee Name</label>
             </div>
             <div class="dropdown col-lg-3 col-md-3 col-sm-6 position-relative inputs">
-              <div class="position-absolute ps-2 text-muted">Designation</div>
+              <div class="position-absolute ps-2 text-muted">Role</div>
               <a class="btn btn-secondary dropdown-toggle rounded bg-white text-dark btn-lg ps-2 pt-3 w-100 text-start fs-6 lh-lg border border-2 select"
                 href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Select Designation
+                Select Roll
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width: 92% !important">
                 <li><a class="dropdown-item" href="#">Software Engineer</a></li>
@@ -950,7 +969,6 @@ padding-top: 29%;
       
       <div class="container">
         <div class="table-responsive">
-
           <table class="table table-striped" id="empolyee">
             <thead>
                 <tr>
@@ -974,15 +992,15 @@ padding-top: 29%;
                     <td class="">
                         <div class="row">
                             <div class="col-5">
-                                <img class="img-fluid rounded-circle" src="../img/person1.jpg">
+                                <img class="img-fluid rounded-circle" src="./assets/images/Profile Pictures/avatar-1.jpg">
                             </div>
                     </td>
                     <td>
                         <div>
-                            <img src="../img/person1.jpg" class="rounded-circle border-white col-1" alt="..." />
-                            <img src="../img/person2.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person3.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-2.jpg" class="rounded-circle border-white col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-3.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-5.jpg" class="rounded-circle col-1" alt="..." />
                             <div class="text-white rounded-circle d-inline-block circle1">
                                 <p class="txt15">+15</p>
                             </div>
@@ -993,13 +1011,13 @@ padding-top: 29%;
                         <div class="dropdown ">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                High
+                                <i class="fa-regular fa-circle-dot text-danger"></i>  High
                             </a>
 
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">High</a></li>
-                                <li><a class="dropdown-item" href="#">Medium</a></li>
-                                <li><a class="dropdown-item" href="#">Low</a></li>
+                            <ul class="dropdown-menu w-25" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i> High</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-warning"></i> Medium</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i> Low</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1007,12 +1025,12 @@ padding-top: 29%;
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Active
+                                <i class="fa-regular fa-circle-dot icon1"></i> Active
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Active</a></li>
-                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Active</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i>  Inactive</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1028,15 +1046,15 @@ padding-top: 29%;
                     <td class="">
                         <div class="row">
                             <div class="col-5">
-                                <img class="img-fluid rounded-circle" src="../img/person1.jpg">
+                                <img class="img-fluid rounded-circle" src="./assets/images/Profile Pictures/avatar-6.jpg">
                             </div>
                     </td>
                     <td class="">
                         <div>
-                            <img src="../img/person1.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person2.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person3.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-7.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-8.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-9.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-10.jpg" class="rounded-circle col-1" alt="..." />
                             <div class="text-white rounded-circle d-inline-block circle1">
                                 <p class="txt15">+15</p>
                             </div>
@@ -1047,13 +1065,13 @@ padding-top: 29%;
                         <div class="dropdown ">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                High
+                                <i class="fa-regular fa-circle-dot text-danger"></i>  High
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">High</a></li>
-                                <li><a class="dropdown-item" href="#">Medium</a></li>
-                                <li><a class="dropdown-item" href="#">Low</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i> High</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-warning"></i> Medium</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i> Low</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1061,12 +1079,12 @@ padding-top: 29%;
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Active
+                                <i class="fa-regular fa-circle-dot icon1"></i> Active
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Active</a></li>
-                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Active</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i>  Inactive</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1081,15 +1099,15 @@ padding-top: 29%;
                     <td class="">
                         <div class="row">
                             <div class="col-5">
-                                <img class="img-fluid rounded-circle" src="../img/person1.jpg">
+                                <img class="img-fluid rounded-circle" src="./assets/images/Profile Pictures/avatar-8.jpg">
                             </div>
                     </td>
                     <td class="">
                         <div>
-                            <img src="../img/person1.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person2.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person3.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-1.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-8.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-10.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-11.jpg" class="rounded-circle col-1" alt="..." />
                             <div class="text-white rounded-circle d-inline-block circle1">
                                 <p class="txt15">+15</p>
                             </div>
@@ -1100,13 +1118,13 @@ padding-top: 29%;
                         <div class="dropdown ">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                High
+                                <i class="fa-regular fa-circle-dot text-danger"></i>  High
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">High</a></li>
-                                <li><a class="dropdown-item" href="#">Medium</a></li>
-                                <li><a class="dropdown-item" href="#">Low</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i> High</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-warning"></i> Medium</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i> Low</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1114,12 +1132,12 @@ padding-top: 29%;
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Active
+                                <i class="fa-regular fa-circle-dot icon1"></i>  Active
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Active</a></li>
-                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Active</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i>  Inactive</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1135,15 +1153,15 @@ padding-top: 29%;
                     <td class="">
                         <div class="row">
                             <div class="col-5">
-                                <img class="img-fluid rounded-circle" src="../img/person1.jpg">
+                                <img class="img-fluid rounded-circle" src="./assets/images/Profile Pictures/avatar-12.jpg">
                             </div>
                     </td>
                     <td class="">
                         <div>
-                            <img src="../img/person1.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person2.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person3.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-13.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-14.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-17.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-21.jpg" class="rounded-circle col-1" alt="..." />
                             <div class="text-white rounded-circle d-inline-block circle1">
                                 <p class="txt15">+15</p>
                             </div>
@@ -1154,13 +1172,13 @@ padding-top: 29%;
                         <div class="dropdown ">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                High
+                                <i class="fa-regular fa-circle-dot text-danger"></i>  High
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">High</a></li>
-                                <li><a class="dropdown-item" href="#">Medium</a></li>
-                                <li><a class="dropdown-item" href="#">Low</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i> High</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-warning"></i> Medium</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i> Low</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1168,12 +1186,12 @@ padding-top: 29%;
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Active
+                                <i class="fa-regular fa-circle-dot icon1"></i> Active
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Active</a></li>
-                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Active</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i>  Inactive</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1188,15 +1206,15 @@ padding-top: 29%;
                     <td class="">
                         <div class="row">
                             <div class="col-5">
-                                <img class="img-fluid rounded-circle" src="../img/person1.jpg">
+                                <img class="img-fluid rounded-circle" src="./assets/images/Profile Pictures/avatar-10.jpg">
                             </div>
                     </td>
                     <td class="">
                         <div>
-                            <img src="../img/person1.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person2.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person3.jpg" class="rounded-circle col-1" alt="..." />
-                            <img src="../img/person4.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-5.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-7.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-2.jpg" class="rounded-circle col-1" alt="..." />
+                            <img src="./assets/images/Profile Pictures/avatar-9.jpg" class="rounded-circle col-1" alt="..." />
                             <div class="text-white rounded-circle d-inline-block circle1">
                                 <p class="txt15">+15</p>
                             </div>
@@ -1207,13 +1225,13 @@ padding-top: 29%;
                         <div class="dropdown ">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                High
+                                <i class="fa-regular fa-circle-dot text-danger"></i>  High
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">High</a></li>
-                                <li><a class="dropdown-item" href="#">Medium</a></li>
-                                <li><a class="dropdown-item" href="#">Low</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i> High</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-warning"></i>  Medium</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Low</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1221,12 +1239,12 @@ padding-top: 29%;
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle rounded-pill bg-light text-dark fs-6" href="#"
                                 role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Active
+                                <i class="fa-regular fa-circle-dot icon1"></i> Active
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Active</a></li>
-                                <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot icon1"></i>  Active</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-circle-dot text-danger"></i>Inactive</a></li>
                             </ul>
                         </div>
                     </td>
@@ -1675,7 +1693,7 @@ padding-top: 29%;
                       </tbody>
                     </table>
                     <div class="modal-footer d-flex justify-content-center">
-                      <button type="button" class="btn btn-primary rounded-pill add">
+                      <button type="button" class="btn btn-primary rounded-pill" id="btnSubmit">
                         Submit
                       </button>
                     </div>
