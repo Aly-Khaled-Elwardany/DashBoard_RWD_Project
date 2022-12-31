@@ -6,20 +6,109 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DashBoard Page </title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="/node_modules/chartist/dist/index.css.map">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <link rel="stylesheet" href="/assets/icons/Aly_icons/aly.icons.css" />
   <link rel="icon" type="image/x-icon" href="/assets/images/Logo/logo2.png" />
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="/assets/css/aly_style.css" />
   <link rel="stylesheet" href="/assets/css/mariam_style.css">
 </head>
+<script>
+    $(document).ready(function() {  
 
-<body>
+
+barChart();
+lineChart();
+
+
+$(window).resize(function() {
+  window.barChart.redraw();
+  window.lineChart.redraw();
+
+});
+});
+
+
+function test () {
+
+  window.barChart.redraw();
+  window.lineChart.redraw();
+    };
+
+
+$(document).ready(function(){
+  $("#mariam").click(test);
+});
+
+
+
+function barChart() {
+window.barChart = Morris.Bar({
+  element: 'bar-chart',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B'],
+  barColors:['#667eeb',' #774ba2 '],
+  lineWidth: '3px',
+  resize: true,
+  redraw: true
+});
+}
+
+function lineChart() {
+window.lineChart = Morris.Line({
+  element: 'line-chart',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B'],
+  lineColors: ['#667eeb',' #774ba2 '],
+  lineWidth: '3px',
+  resize: true,
+  redraw: true
+});
+}
+
+
+</script>
+
+<body class="bg-light">
+  
   <!-- ....................... nav bar ............................ -->
   <nav style="position: fixed; top: 0; width: 100vw; z-index: 100">
     <div style="
           height: 8vh;
           background-image: linear-gradient(to right, #647dee, #7f53ac);
-        " class="d-flex justify-content-between align-items-center">
+        " class="div_in_navBar d-flex justify-content-between align-items-center">
       <!-- Left Part in nav bar -->
       <div style="width: 42%" class="left_div_in_sideBar d-flex justify-content-between align-items-center ms-3">
         <!-- Logo -->
@@ -29,7 +118,7 @@
 
         <div style="width: 80%" class=" d-flex align-items-center justify-content-start">
           <!-- burger button -->
-          <button onclick="Div_Toggle()" class=" border bg-transparent border-0" type="button" data-bs-toggle="collapse"
+          <button id="mariam" onclick="Div_Toggle()" class=" border bg-transparent border-0" type="button" data-bs-toggle="collapse"
             data-bs-target="#max_sidebar">
             <i class="me-4 text-white fs-3 icon-menu"></i>
           </button>
@@ -46,7 +135,7 @@
           <input style="width: 18vw" type="text" class="d-none d-lg-block form-control bg-transparent rounded-5 mt-3" id="search"
             placeholder="Search here" />
           <div style="right: 1rem" class=" position-absolute">
-            <i style="top: 0.5rem" class="d-none d-md-block opacity-75 position-relative text-white icon-search"></i>
+            <i style="top: 0.5rem" class=" d-none d-md-block opacity-75 position-relative text-white icon-search"></i>
           </div>
         </div>
 
@@ -249,7 +338,7 @@
         </div>
 
         <!--  dropdown list of the Message  -->
-        <div style="height: 8vh; padding-top: 1.5rem" class="highlighted_div ps-3 dropdown d-none d-md-block">
+        <div style="height: 8vh; padding-top: 1.5rem" class=" highlighted_div ps-3 dropdown d-none d-md-block">
           <div data-bs-toggle="dropdown" class="d-flex justify-content-between align-items-center">
             <i class="fs-5 icon-comment-o"></i>
             <span style="bottom: 0.8rem; right: 0.8rem; font-size: 0.7rem"
@@ -442,13 +531,13 @@
   <!-- ....................... Main ...................... -->
   <main style=" top: 7vh; " class="d-flex position-relative side_bar">
     
-    
+  <!-- <main style="top: 7vh;">   -->
     
     <!-- Mini Side Bar -->
     <div  id="mini_sidebar" style="  width:5%; background-color: #34444c;" class="d-block fs-4 mini_sidebar text-white">
       
     <!-- for word main + the first 2 icons -->
-      <div>
+      <div class="div_in_mini_sidebar_in_collapse">
         <!-- Main -->
         <p id="div_show" style="font-size: 1rem ; visibility: hidden; top: 0.75rem;" class="position-relative p-1 fw-semibold text-start ms-2 mt-1">
           Main
@@ -611,7 +700,7 @@
                   data-bs-parent="#accordionExample">
                   <div class="mb-2">
                     
-                    <a href="/projects_grid_view_nada.html" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Projects</a>
+                    <a href="/projects_grid_view_doha.html" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Projects</a>
                     <a href="#" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Tasks</a>
                     <a href="#" class="d-block mt-2 hover text-white text-decoration-none"style="opacity: 0.7;font-size:1rem;">Task Board</a>
                   </div>
@@ -651,7 +740,7 @@
         class=" text-white side_bar fs-4">
 
         <!-- for word main + the first 2 icons -->
-        <div>
+        <div class="div_in_max_sidebar_in_collapse">
           <!-- Main -->
           <p style="font-size: 1rem ;top: 0.75rem;" class="position-relative p-1 fw-semibold text-start ms-2 mt-1">
             Main
@@ -834,22 +923,476 @@
         </div>
       </div>
     </div>
-
+  
+ 
 
     <!-- Page Content-->
-    <div>
-      <!-- .......................................................................................... -->
-        <h1 id="div_content" class="text-center" style="width: 100%">
-      
-            Thanks <span class="text-danger">Mariam</span> for your effort Please put your code here
-        </h1>
-        <h4 class="text-primary text-center">Code for DashBoard page </h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, laboriosam reprehenderit. Provident tempore dolores temporibus vero, ducimus esse accusantium earum suscipit possimus at rem repellat dicta natus, placeat facere officia, excepturi consequatur maiores ad? Aut neque cumque unde? Nostrum consequuntur ut temporibus libero deleniti quae fuga enim, iusto aliquam esse, hic aspernatur aliquid magni eos! Expedita voluptate placeat vel accusamus at. Ut perspiciatis commodi unde dolorum inventore ea, nam repudiandae doloremque quasi maiores facere. Facilis quia cum numquam id blanditiis modi, aliquam magnam similique ab provident explicabo, fugit, obcaecati illo. Perferendis recusandae asperiores blanditiis corrupti expedita quas eius deleniti magnam rerum accusantium! Eaque ea expedita unde soluta sit commodi nostrum ipsam sint magnam reprehenderit. Error, quo quis nulla voluptas pariatur praesentium perspiciatis dolore delectus voluptatibus reprehenderit nemo quos tempore ipsum voluptates est ea neque eius harum aperiam, dolorum excepturi expedita consequatur qui! Reprehenderit doloremque vitae inventore quis expedita quos! Voluptatibus iste dolorum impedit sunt nesciunt dolorem, nemo, doloremque optio esse quibusdam voluptatem repellendus ratione, odit dolore. Vel laboriosam assumenda et fuga dicta dignissimos nihil blanditiis voluptas ducimus tempora, repellendus temporibus tenetur possimus ad vitae excepturi, quisquam facere placeat odio cum eos. Saepe aperiam molestias expedita iste itaque id sunt ex ratione veritatis asperiores, perferendis iusto, aut unde esse ducimus eius ipsa. Totam dolorem adipisci ducimus voluptatem quos labore commodi, ab fugiat, illo esse autem ipsam, unde magnam dolores eius ea deserunt repellendus dignissimos mollitia repudiandae iure excepturi. Quam doloribus, consectetur voluptate porro consequuntur doloremque repellat ullam repudiandae iusto cupiditate rem nobis molestias natus, eveniet rerum dolore cumque commodi distinctio minima nulla veritatis eaque perferendis? Illo aliquid quis voluptatum commodi facilis facere sit nesciunt deleniti sequi enim pariatur ipsa veniam ullam aut dignissimos, recusandae, consectetur in eaque. Similique voluptatem unde neque libero eveniet voluptatum inventore culpa porro accusantium esse. Quaerat quis ipsam voluptatibus quo accusantium neque praesentium tenetur ipsa. Velit voluptas repudiandae debitis culpa dolores harum, deserunt dolorem dolor voluptatibus. Voluptates sapiente repellat fugit dolorem vero cum deserunt blanditiis ad quaerat officiis molestias asperiores quae earum ea error, repellendus, similique dignissimos dicta rerum veniam cupiditate maiores. Debitis consectetur nostrum ducimus fuga totam facilis velit autem quidem ex vitae, incidunt maxime, hic dolores maiores doloremque odio. Eius culpa laboriosam, sapiente quos dolore, molestiae cumque necessitatibus deleniti velit cum debitis saepe sint temporibus quas delectus accusantium! Commodi aperiam excepturi tenetur obcaecati rerum repellat, assumenda voluptate illo quisquam rem saepe quasi, voluptas sapiente dolorem repudiandae quod cupiditate ab, reprehenderit hic officiis accusamus. Doloribus eius laboriosam, ab reiciendis omnis assumenda ipsum, a suscipit hic explicabo sunt sapiente earum dolorem, excepturi iusto soluta? Corrupti saepe cum, voluptate excepturi nostrum inventore eveniet aut ad. In dignissimos voluptas itaque optio, aut atque rerum distinctio error odio dolorem incidunt voluptatem placeat ipsam mollitia quisquam tenetur accusantium aliquid blanditiis, laborum natus deleniti? Consequatur maiores odio recusandae iste repudiandae suscipit similique asperiores quisquam mollitia ullam consectetur debitis possimus, animi fuga quasi, doloribus tempore minima. Distinctio modi natus deserunt placeat aliquam sit aperiam et asperiores rem illum, autem rerum? Ullam aspernatur laudantium recusandae fuga autem saepe numquam sed molestias vel ipsa similique consequatur officiis exercitationem beatae, officia aperiam maxime at quia magnam vitae quod quos! Libero at doloribus, deserunt ipsam saepe suscipit quia, totam velit animi aliquam itaque quod accusantium aliquid dolorum ullam quaerat mollitia obcaecati laborum labore consequatur eligendi iure hic maxime? Nam corporis molestiae, debitis in id sunt eligendi atque dolores possimus cupiditate, itaque doloribus velit nemo sit animi, exercitationem pariatur quibusdam. Quasi, ducimus? Minus error beatae ullam? Nihil eligendi dolorem, labore eaque fuga dolor qui enim quae quam velit officiis, amet ullam aliquam laborum! Architecto unde rem libero laboriosam expedita officia animi, repudiandae fugiat doloribus corporis quis minima adipisci dolore natus, non, earum sequi sunt ab quasi eos corrupti suscipit? A aperiam eaque itaque dolores saepe sed illo iste alias culpa voluptate enim nihil aliquid voluptates quaerat mollitia similique fugiat iusto, delectus quis sapiente distinctio tempore nemo! Omnis, beatae? Aliquid, tenetur dolore minima beatae debitis inventore omnis ipsa hic consequatur, repellat totam eligendi, accusantium obcaecati at? Possimus nihil accusantium tempora adipisci quos deleniti? Tenetur exercitationem voluptate autem? Quos expedita soluta quae dolores, doloremque aspernatur quidem obcaecati reprehenderit laboriosam. Velit totam soluta nesciunt animi nihil amet explicabo natus voluptates excepturi!</p>
-      <!-- ........................................................................................... -->
-    </div>
     
-  </main>
 
+  <!------------start of main page------------->
+
+  <section class="container-fluid">
+          <div class=" px-4">
+              <h2 class="mt-4">Welcome Admin!</h2>
+              <ol class="breadcrumb mb-2">
+                  <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+          </div>
+          <!------------first row------------->
+          <div class=" pt-4 px-4">
+              <div class="row g-4">
+                  <div class="col-sm-6 col-xl-3">
+                      <div class=" shadow-sm bg-white rounded d-flex align-items-center justify-content-between p-4">
+                          <i  style="color:#667eeb; background-color: #e1e5fa; font-size: 40px; border-radius: 50%; padding: 7px;" class="fa-solid fa-cubes "></i>
+                          <div class="ms-3">
+                              <h3 class="mb-0 text-center fw-bold pb-1">112</h3>
+                              <h6 class="mb-0">Projects</h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xl-3">
+                      <div class=" shadow-sm bg-white rounded d-flex align-items-center justify-content-between p-4">
+                          <i  style="color:#667eeb; background-color: #e1e5fa; font-size: 40px; border-radius: 50%; padding: 7px;" class="fa-solid fa-dollar fa-fw"></i>
+                          <div class="ms-3">
+                              <h3 class="mb-0 text-center fw-bold pb-1">44</h3>
+                              <h6 class="mb-0">Clients</h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xl-3">
+                      <div class=" shadow-sm bg-white rounded d-flex align-items-center justify-content-between p-4">
+                          <i  style="color:#667eeb; background-color: #e1e5fa; font-size: 40px; border-radius: 50%; padding: 7px;" class="fa-regular fa-gem "></i>
+                          <div class="ms-3">
+                              <h3 class="mb-0 text-center fw-bold pb-1">37</h3>
+                              <h6 class="mb-0">Tasks</h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xl-3">
+                      <div class=" shadow-sm bg-white rounded d-flex align-items-center justify-content-between p-4">
+                          <i style="color:#667eeb; background-color: #e1e5fa;  border-radius: 50% ; padding: 9px;"class="fa-solid fa-user fa-2x"></i>
+                          <div class="ms-3">
+                              <h3 class="mb-0 text-center fw-bold pb-1">218</h3>
+                              <h6 class="mb-0">Employee</h6>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-------------2nd row------------->
+          <section  class="pt-5 ">
+              <div class="row ">
+                <div  class="col-sm-12 col-md-12 col-lg-6">
+                  <div  class=" border border-1  p-4 bg-white rounded ">
+                      <h5 class=" text-center">Total Revenue</h5>
+                        <div id="bar-chart"></div>
+                  </div>
+              </div>
+      
+            
+                <div  class="col-sm-12 col-md-12 col-lg-6">
+                  <div  class=" border border-1  p-4 bg-white rounded ">
+                      <h5 class=" text-center">Sales Overview</h5>
+                             
+                        <div id="line-chart"></div>
+                  </div>
+              </div>
+                  </div>
+      
+        </section>
+          <!--------------3rd row-------------->
+          <div class="  pt-5">
+              <div class="row g-1">
+                  <div class="col-md-6 col-xl-3">
+                      <div class="border border-1  p-4  bg-body rounded-0">
+                          <div >
+                              <div class="row">
+                                  <div class="col-6">
+                                      <h6 class="text-black  mt-0 ">New Employees</h6>
+                                      <h4 class="my-2 py-1 fw-bold">10</h4>
+                                  </div>
+                                  <div class="col-6 text-end ">
+                                      <span class="text-success fw-bold">+10%</span>
+                                  </div>
+                              </div>
+      
+                              <div class="progress" style="height: 5px;">
+                                  <div class=" progress-bar bg-info" role="progressbar" style="background-color: #667eeb !important; width: 70%" aria-valuenow="50"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mb-1 pt-1">
+                              Overall Employees 218
+                          </p>
+                      </div> 
+                  </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                  <div class="border border-1  p-4  bg-body rounded-0">
+                      <div >
+                          <div class="row">
+                              <div class="col-6">
+                                  <h6 class="text-black  mt-0 ">Earnings</h6>
+                                  <h4 class="my-2 py-1 fw-bold">$1,42,300</h4>
+                              </div>
+                              <div class="col-6 text-end ">
+                                  <span class="text-success fw-bold">+12.5%</span>
+                              </div>
+                          </div>
+      
+                          <div class="progress" style="height: 5px;">
+                                      <div class=" progress-bar progress-bar-primary w-75" role="progressbar"
+                              style="background-color: #667eeb !important;width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <p class="mb-1 pt-1">
+                          Previous Month
+                          <span class=" text-sm font-weight-bolder text-muted ">$1,15,852</span>
+                      </p>
+                  </div> 
+              </div> 
+          </div>
+      
+          <div class="col-md-6 col-xl-3">
+              <div class=" border border-1  p-4 bg-body rounded-0">
+                  <div >
+                      <div class="row">
+                          <div class="col-6">
+                              <h6 class="text-black  mt-0 ">Expenses</h6>
+                              <h4 class="my-2 py-1 fw-bold">$8,500</h4>
+                          </div>
+                          <div class="col-6 text-end ">
+                              <span class="text-danger fw-bold ">-2.8%</span>
+                          </div>
+                      </div>
+      
+                      <div class="progress" style="height: 5px;">
+                                          <div class=" progress-bar bg-warning" role="progressbar" style="background-color: #667eeb !important;width: 75%"
+                          aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mb-1 pt-1">
+                      Previous Month
+                      <span class=" text-sm font-weight-bolder text-muted ">$7,500</span>
+                  </p>
+              </div> 
+          </div> 
+          </div>
+      
+          <div class="col-md-6 col-xl-3">
+              <div class=" border border-1  p-4 bg-body rounded-0">
+                  <div>
+                      <div class="row">
+                          <div class="col-6">
+                              <h6 class="text-black  mt-0 ">Profit</h6>
+                              <h4 class="my-2 py-1 fw-bold">$1,12,000</h4>
+                          </div>
+                          <div class="col-6 text-end ">
+                              <span class="text-danger fw-bold ">-75%</span>
+                          </div>
+                      </div>
+      
+                      <div class="progress" style="height: 5px;">
+                                              <div class=" progress-bar bg-info" role="progressbar" style="background-color: #667eeb !important;width: 70%"
+                          aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="mb-1 pt-1">
+                      Previous Month
+                      <span class=" text-sm font-weight-bolder text-muted "> $1,42,000</span>
+                  </p>
+              </div> 
+          </div>
+          </div>
+          </div>
+          </div>
+          <!---------------4th row------------->
+          <div class="pt-5 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="h-100 bg-white rounded p-4">
+                        <h5 class="mb-0 pb-4 fw-bold">Statistics</h5>
+                        <div class="d-flex align-items-center py-1">
+                            <div class="col-12">
+                                <div class=" p-3 border border-1 bg-body rounded-0">
+                                    <div >
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 class="mt-0 ">Today leave</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class="fs-6  ">4/65</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height: 3px;">
+                                            <div class=" progress-bar " role="progressbar" style="background-color: #667eeb !important; width: 70%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-1">
+                            <div class="col-12">
+                                <div class=" p-3  border border-1  bg-body rounded-0">
+                                    <div >
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 class="mt-0 ">Pending Invoice</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class="fs-6  ">5/92</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height: 3px;">
+                                            <div class=" progress-bar bg-warning" role="progressbar" style="width: 70%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-1">
+                            <div class="col-12">
+                                <div class="p-3 border border-1  bg-body rounded-0">
+                                    <div >
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 class="mt-0 ">Completed Projects</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class="fs-6  ">85/112</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height: 3px;">
+                                            <div class=" progress-bar bg-success" role="progressbar" style="width: 70%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-1">
+                            <div class="col-12">
+                                <div class="p-3  border border-1  bg-body rounded-0">
+                                    <div >
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 class="mt-0 ">Open Tickets</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class="fs-6  ">190/212</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height: 3px;">
+                                            <div class=" progress-bar bg-danger" role="progressbar" style="width: 70%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-1">
+                            <div class="col-12">
+                                <div class="p-3 border border-1  bg-body rounded-0">
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 class="mt-0 ">Closed Tickets</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <span class="fs-6  ">22/212</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress" style="height: 3px;">
+                                            <div class=" progress-bar bg-info" role="progressbar" style="width: 70%"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="h-100 bg-white rounded p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h5 class="mb-0 pb-1 fw-bold">Task Statistics</h5>
+                        </div>
+                        <div class="row pb-4">
+                            <div class="col-6">
+                            <div class="card border-light shadow-sm bg-light rounded-0">
+                                <div class="card-body p-0">
+                                <p class="fs-6 text-center">Total Tasks</p>
+                                <h5 class="card-title text-center">385</h5>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-6 ">
+                            <div class="card border-light shadow-sm bg-light rounded-0">
+                                <div class="card-body p-0">
+                                <p class="fs-6 text-center">Overdue Tasks</p>
+                                <h5 class="card-title text-center">19</h5>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar " role="progressbar" style="background-color:#7560ee !important; width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">22%</div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 24%" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100">24%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 21%" aria-valuenow="21" aria-valuemin="0" aria-valuemax="100">21%</div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                        </div>
+                        <div class="pt-3 card border-0">
+                            <div class="card-body pb-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-record-circle text-primary " viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        </svg>
+                                        <span class=" text-sm ">Completed Tasks</span>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <span class="fs-6 fw-bold ">166</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card border-0">
+                            <div class="card-body pb-2">
+                                <div class="row">
+                                <div class="col-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-record-circle text-warning" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    </svg>
+                                    <span class=" text-sm ">Inprogress Tasks</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <span class="fs-6 fw-bold ">115</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card border-0">
+                            <div class="card-body pb-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-record-circle text-success" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        </svg>
+                                        <span class=" text-sm ">On Hold Tasks</span>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <span class="fs-6 fw-bold ">31</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card border-0">
+                            <div class="card-body pb-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-record-circle text-danger" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        </svg>
+                                        <span class=" text-sm ">Pending Tasks</span>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <span class="fs-6 fw-bold ">47</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="card border-0">
+                            <div class="card-body pb-2">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-record-circle text-info" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        </svg>
+                                        <span class=" text-sm  ">Review Tasks</span>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <span class="fs-6 fw-bold ">5</span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <div class="h-100 bg-white rounded p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <span class=" mb-0 pb-1 fw-bold h5 ">Today Absent</span>
+                                <span class="badge bg-danger">5</span>
+                            </div>
+                            <div class="d-flex align-items-start mt-4">
+                                <div class="col-12">
+                                    <div class="row ">
+                                    <div class="card border-light shadow-sm p-3 bg-white rounded-0 mb-3">
+                                        <div class="card-body p-2">
+                                            <div class="col-6">
+                                                <img class="me-3 rounded-circle" src="./assets/images/Profile Pictures/user.jpeg" width="50">
+                                                <span class=" text-sm fw-bold ">Martin Lewis</span>
+                                            </div>
+                                            <div class="col-6 mt-3">
+                                                <span class=" fs-6 ">4 Sep 2019</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <span class="  text-muted ">Leave Date</span>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <span class="badge bg-danger">Pending</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card border-light shadow-sm p-3 bg-white rounded-0">
+                                        <div class="card-body p-2">
+                                            <div class="col-6">
+                                                <img class="me-3 rounded-circle" src="./assets/images/Profile Pictures/user2.jpeg" width="50">
+                                                <span class=" text-sm fw-bold ">Martin Lewis</span>
+                                            </div>
+                                            <div class="col-6 mt-3">
+                                                <span class=" fs-6 ">4 Sep 2019</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <span class="  text-muted ">Leave Date</span>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <span class="badge bg-success">Approved</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4 p-2">
+                                    <button type="button" class="btn btn-outline-secondary">Load more</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+   </div>
+     </section>
+  </main>
+  
+  
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script src="/assets/js/aly_js.js"></script>
   <script src="/assets/js/mariam_js.js"></script>

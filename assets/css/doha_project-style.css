@@ -1,0 +1,60 @@
+.card1 {
+  position: relative;
+}
+.dropbtn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+.circle1 {
+  background-color: #ff7e61;
+  font-size: 0.5rem !important;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.circle1 .txt15 {
+  text-align: center;
+  padding-top: 29%;
+}
+.progress-xs {
+  height: 6px;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+body {
+  background-color: #f7f7f7;
+}
+
+.add {
+  background-color: #698aea;
+}
+
+.add:hover {
+  background-color: #4b68e7;
+}
+#bnt_sch {
+  background-color: #55cb72;
+  height: 58px;
+}
+@media (max-width: 580px) {
+  #dash-e {
+    display: none;
+  }
+  .small-e {
+    width: 70% !important;
+  }
+ 
+}
+
+@media (max-width: 770px) {
+  .inputs {
+    margin: 1rem 0rem;
+  }}
+
+@media (max-width: 1000px) {
+  .select {
+    font-size: 0.5rem;
+  }
+}

@@ -1,0 +1,47 @@
+body {
+  background-color: #f7f7f7;
+}
+
+.add {
+  background-color: #698aea;
+}
+
+.add:hover {
+  background-color: #4b68e7;
+}
+#bnt_sch {
+  background-color: #55cb72;
+  height: 58px;
+}
+
+.CEO {
+  margin-top: -0.3rem;
+}
+.card1 {
+  position: relative;
+}
+.dropbtn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+@media (max-width: 580px) {
+  #dash-e {
+    display: none;
+  }
+  .small-e {
+    width: 70% !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .inputs {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .select {
+    font-size: 0.5rem;
+  }
+}
