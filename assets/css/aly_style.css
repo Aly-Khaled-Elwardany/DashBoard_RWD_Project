@@ -1,7 +1,4 @@
-/* To remove blue outline around input elements */
-/* input:focus{
-    outline: none !important ; 
-} */
+
 
 /* ................................ General ............................ */
 body{
@@ -161,6 +158,44 @@ body{
 
   }
 
+  @media (max-width: 675px )
+  {
+    .div_of_passForm_in_login_page{
+      flex-direction: column !important;
+      align-items:flex-start !important ;
+    }
+    
+    #password_label_in_login_page{
+      position: relative;
+      top: 0.75rem;
+    }
+    .forget_password_in_login_page{
+      margin-bottom: 0.25rem;
+    }
+
+  }
+
+  @media (max-width: 600px )
+  {
+    .div_of_dont_have_account_in_login_page{
+      flex-direction: column !important;
+      align-items:center !important ;
+      
+
+    }
+    .p1_dont_have_account_in_login_page{
+      text-align: center;
+
+    }
+    .p2_dont_have_account_in_login_page{
+      position: relative;
+      bottom: 1rem;
+    }
+    
+
+  }
+
+
   /* .................. Media Query - Height ...................... */
 
 
@@ -172,8 +207,14 @@ body{
     }
     
     .side_bar{
-      top: 11.5vh !important;
+      top: 11vh !important;
       
+    }
+
+    #max_sidebar{
+      position: relative;
+      bottom: 0.25vh !important;
+
     }
     .right_div_in_sideBar{
       height: 11.5vh !important;
@@ -185,6 +226,9 @@ body{
     .img_in_navBar{
       width: 2rem;
       height: 2rem !important;
+    }
+    .div_in_mini_sidebar_in_collapse,.div_in_max_sidebar_in_collapse{
+      padding-top: 0.25rem !important;
     }
   }
 
